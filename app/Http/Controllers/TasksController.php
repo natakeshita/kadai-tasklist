@@ -49,6 +49,7 @@ class TasksController extends Controller
     {
         $request->validate([
             'status' => 'required|max:10',
+            'content' => 'required|max:255',             
         ]);
         
         $task = new task;
@@ -90,6 +91,7 @@ class TasksController extends Controller
         // メッセージ編集ビューでそれを表示
         return view('tasks.edit', [
             'task' => $task,
+           
         ]);
     }
 
@@ -104,6 +106,7 @@ class TasksController extends Controller
     {
         $request->validate([
             'status' => 'required|max:10',
+            'content' => 'required|max:255',             
         ]);
         
         // idの値でメッセージを検索して取得
